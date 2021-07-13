@@ -1,24 +1,22 @@
 import {
   Component,
   OnChanges,
-  Input,
   Output,
   EventEmitter,
   AfterViewInit,
 } from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Button } from '@gravitee-io/gravitee-ui-mindmap';
+import { MindmapView } from '@gravitee-io/gravitee-ui-mindmap';
 
 @Component({
-  selector: 'react-button',
+  selector: 'react-mindmap',
   template: '<div [id]="rootId"></div>',
 })
-export class ButtonComponent implements OnChanges, AfterViewInit {
-  @Input() disabled: boolean = false;
+export class MindmapComponent implements OnChanges, AfterViewInit {
   @Output() submitEvent = new EventEmitter<string>();
 
-  public rootId = 'button-root';
+  public rootId = 'mindmap-root';
   private hasViewLoaded = false;
 
   public ngOnChanges() {
@@ -36,12 +34,11 @@ export class ButtonComponent implements OnChanges, AfterViewInit {
     }
 
     const props = {
-      disabled: this.disabled,
       onSubmit: (res: string) => this.submitEvent.emit(res),
     };
 
     ReactDOM.render(
-      React.createElement(Button, props),
+      React.createElement(MindmapView, props),
       document.getElementById(this.rootId)
     );
   }

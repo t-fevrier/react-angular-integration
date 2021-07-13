@@ -18,7 +18,7 @@
     "@angular/platform-browser": "~12.0.5",
     "@angular/platform-browser-dynamic": "~12.0.5",
     "@angular/router": "~12.0.5",
-    "@gravitee-io/gravitee-ui-mindmap": "^0.1.0",
+    "@gravitee-io/gravitee-ui-mindmap": "^0.2.3",
     "jawblia": "^0.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

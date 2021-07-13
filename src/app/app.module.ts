@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './react-components/button.component';
+import { MindmapComponent } from './react-components/mindmap.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent],
+  declarations: [AppComponent, MindmapComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
