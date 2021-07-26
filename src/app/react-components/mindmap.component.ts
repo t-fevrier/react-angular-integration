@@ -8,6 +8,7 @@ import {
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { MindmapView } from '@gravitee-io/gravitee-ui-mindmap';
+import '@gravitee-io/gravitee-ui-mindmap/dist/index.cjs.css';
 
 @Component({
   selector: 'react-mindmap',
