@@ -4,18 +4,20 @@ import {
   Output,
   EventEmitter,
   AfterViewInit,
+  Input,
 } from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { MindmapView } from '@gravitee-io/gravitee-ui-mindmap';
-import '@gravitee-io/gravitee-ui-mindmap/dist/index.cjs.css';
+import productsModel from '../../assets/products.model.js';
 
 @Component({
   selector: 'react-mindmap',
   template: '<div [id]="rootId"></div>',
 })
 export class MindmapComponent implements OnChanges, AfterViewInit {
-  @Output() submitEvent = new EventEmitter<string>();
+  @Input() model: any;
+  @Output() saveModel = new EventEmitter<any>();
 
   public rootId = 'mindmap-root';
   private hasViewLoaded = false;
@@ -35,7 +37,8 @@ export class MindmapComponent implements OnChanges, AfterViewInit {
     }
 
     const props = {
-      onSubmit: (res: string) => this.submitEvent.emit(res),
+      model: productsModel,
+      saveModel: (res: any) => this.saveModel.emit(res),
     };
 
     ReactDOM.render(
