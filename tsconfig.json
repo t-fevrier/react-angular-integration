@@ -21,6 +21,7 @@
       "es2018",
       "dom"
     ],
+    "jsx": "react",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "allowSyntheticDefaultImports": true
