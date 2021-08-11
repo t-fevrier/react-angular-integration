@@ -1,5 +1,10 @@
 <div className="app-container">
   <h1>Below is the React Component!</h1>
   <input type="button" (click)="onClick($event)" value="change model name">
-  <react-mindmap (saveModel)="saveModel($event)"  [model]="model"></react-mindmap>
+<!--  <react-mindmap (saveModel)="saveModel($event)"  [model]="model"></react-mindmap>-->
+
+  <app-mindmap
+    [model]="model"
+    (modelUpdated)="saveModel($event)"
+  ></app-mindmap>
 </div>
