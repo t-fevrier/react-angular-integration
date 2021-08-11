@@ -9,7 +9,6 @@ import {
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { MindmapView } from '@gravitee-io/gravitee-ui-mindmap';
-import productsModel from '../../assets/products.model.js';
 
 @Component({
   selector: 'react-mindmap',
@@ -37,7 +36,7 @@ export class MindmapComponent implements OnChanges, AfterViewInit {
     }
 
     const props = {
-      model: productsModel,
+      model: this.model,
       saveModel: (res: any) => this.saveModel.emit(res),
     };
 
