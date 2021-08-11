@@ -1,3 +1,15 @@
+<div class="embedded-showcase">
+  <h1>React embedded in Angular</h1>
+
+  <input type="button" (click)="increment()" value="increment">
+
+  <div class="my-component-wrapper">
+    <app-my-component [counter]="count" (componentClick)="increment()"></app-my-component>
+  </div>
+</div>
+
+
+
 <div className="app-container">
   <h1>Below is the React Component!</h1>
   <input type="button" (click)="onClick($event)" value="change model name">

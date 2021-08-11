@@ -10,13 +10,19 @@ export class AppComponent implements OnInit {
   title = 'angular-app';
   model: any;
 
-  private count = 0;
+  count = 0;
 
   ngOnInit(): void {
     this.model = { ...productsModel};
 
     console.log("Model initialised", this.model);
   }
+
+  public increment() {
+    this.count++;
+  }
+
+
 
   saveModel($event: any) {
     console.log("Model saved", $event);
