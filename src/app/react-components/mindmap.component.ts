@@ -17,6 +17,7 @@ import { MindmapView } from '@gravitee-io/gravitee-ui-mindmap';
 export class MindmapComponent implements OnChanges, AfterViewInit {
   @Input() model: any;
   @Output() saveModel = new EventEmitter<any>();
+  @Output() onNodeSelect = new EventEmitter<any>();
 
   public rootId = 'mindmap-root';
   private hasViewLoaded = false;
@@ -38,6 +39,7 @@ export class MindmapComponent implements OnChanges, AfterViewInit {
     const props = {
       model: this.model,
       saveModel: (res: any) => this.saveModel.emit(res),
+      onNodeSelect: (res: any) => this.onNodeSelect.emit(res),
     };
 
     ReactDOM.render(

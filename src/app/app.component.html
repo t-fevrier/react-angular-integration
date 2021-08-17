@@ -1,5 +1,12 @@
 <div className="app-container">
   <h1>Below is the React Component!</h1>
-  <input type="button" (click)="onClick($event)" value="change model name">
-  <react-mindmap (saveModel)="saveModel($event)"  [model]="model"></react-mindmap>
+  <form #changeColorForm="ngForm" (ngSubmit)="onSubmit(changeColorForm)">
+    <input id="color" name="color" type="text" ngModel />
+    <button class="button" type="submit">Change color</button>
+  </form>
+  <react-mindmap
+    (saveModel)="saveModel($event)"
+    (onNodeSelect)="onNodeSelect($event)"
+    [model]="model"
+  ></react-mindmap>
 </div>
